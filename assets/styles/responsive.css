@@ -1,0 +1,7 @@
+.d-flex{
+    display: flex;
+}
+.centered{
+    align-items: center;
+    justify-content: center;
+}
