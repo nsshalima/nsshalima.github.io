@@ -1,0 +1,310 @@
+<!--
+  Professional QA Portfolio (Single-file template)
+  How to use:
+  1. Create a new repository named: <your-username>.github.io
+  2. Add this file as index.html at the repository root.
+  3. (Optional) Add folders: /pdf, /projects, /assets/images and upload your PDFs and screenshots.
+  4. Enable GitHub Pages on the main branch (Settings → Pages → Source: main).
+  5. Your site will be live at: https://<your-username>.github.io
+
+  Replace placeholder text, links and sample content with your real information.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>[Your Name] — QA Portfolio</title>
+  <meta name="description" content="QA Engineer portfolio: test plans, reports, automation, case studies">
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --accent:#2563eb; --muted:#6b7280; --glass: rgba(255,255,255,0.6);
+      --radius:14px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg,var(--bg),#eef4ff); color:#0f172a}
+    .wrap{max-width:var(--maxw); margin:28px auto; padding:24px}
+
+    header{display:flex; gap:18px; align-items:center; justify-content:space-between}
+    .brand{display:flex; gap:14px; align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-weight:600}
+    nav a.cta{background:var(--accent); color:#fff; padding:8px 12px;border-radius:10px;margin-left:18px}
+
+    .hero{display:grid; grid-template-columns:1fr 360px; gap:22px; margin-top:28px; align-items:center}
+    .card{background:var(--card); border-radius:var(--radius); padding:20px; box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    h1{margin:0 0 6px 0; font-size:26px}
+    p.lead{margin:0;color:var(--muted)}
+
+    .stats{display:flex; gap:12px; margin-top:14px}
+    .stat{background:var(--glass); padding:10px 12px; border-radius:10px; font-weight:600}
+
+    .skills ul{display:flex;gap:8px;flex-wrap:wrap; padding:0; list-style:none;margin:12px 0 0 0}
+    .skills li{background:#eef2ff;color:#1e293b;padding:8px 10px;border-radius:8px;font-weight:600}
+
+    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:16px}
+    .project{padding:16px;border-radius:12px;background:linear-gradient(180deg, #fff, #fbfdff); border:1px solid rgba(15,23,42,0.04)}
+    .project h3{margin:0 0 8px 0}
+    .project p{margin:0 0 12px 0;color:var(--muted); font-size:14px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid var(--accent); color:var(--accent); text-decoration:none;font-weight:700}
+    .btn.primary{background:var(--accent); color:#fff; border:0}
+
+    .section{margin-top:26px}
+    .two-col{display:grid; grid-template-columns:1fr 360px; gap:18px}
+
+    .pdf-list li{margin-bottom:8px}
+
+    footer{margin-top:38px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero,.two-col{grid-template-columns:1fr}
+      nav{display:none}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:#f1f5f9}
+
+    /* project modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.55);padding:18px}
+    .modal .modal-card{width:min(880px,98%); max-height:86vh; overflow:auto}
+    .modal.show{display:flex}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">YN</div>
+        <div>
+          <div style="font-weight:800">[Your Name]</div>
+          <div class="muted" style="font-size:13px">QA Engineer • Automation • API • Performance</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#docs">Docs</a>
+        <a href="#contact">Contact</a>
+        <a href="#resume" class="cta">Resume</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card">
+        <h1>Hi — I'm [Your Name]</h1>
+        <p class="lead">I design test strategies, build automation, and deliver reliable test reports for web & mobile applications. I specialise in end-to-end QA for enterprise dashboards.</p>
+
+        <div class="stats" aria-hidden>
+          <div class="stat">5+ Years Experience</div>
+          <div class="stat">20+ Projects</div>
+          <div class="stat">80% Automation Coverage</div>
+        </div>
+
+        <div class="section skills">
+          <h3>Skills</h3>
+          <ul>
+            <li>Manual Testing</li>
+            <li>Automation (Selenium, Cypress)</li>
+            <li>API Testing (Postman, REST Assured)</li>
+            <li>Performance (JMeter)</li>
+            <li>CI/CD • Git • Jenkins</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3>Quick Links</h3>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="#docs" style="margin-left:10px">Download Docs</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Contact</h3>
+        <p class="muted">Email: <strong>you@example.com</strong></p>
+        <p class="muted">Location: City, Country</p>
+        <div style="margin-top:12px">
+          <a class="tag" href="#contact">LinkedIn</a>
+          <a class="tag" href="#contact" style="margin-left:8px">GitHub</a>
+        </div>
+
+        <div style="margin-top:18px">
+          <h4 class="muted">Resume</h4>
+          <a class="btn primary" href="/pdf/Resume.pdf" target="_blank">Download Resume</a>
+        </div>
+
+        <div style="margin-top:18px">
+          <h4 class="muted">Top Docs</h4>
+          <ul class="pdf-list">
+            <li><a href="/pdf/TestPlan_Sample.pdf" target="_blank">Test Plan — Hotel Booking</a></li>
+            <li><a href="/pdf/TestReport_Sample.pdf" target="_blank">Test Report — Payroll</a></li>
+            <li><a href="/pdf/BugSummary_Sample.pdf" target="_blank">Bug Summary — E‑commerce</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Selected Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>Hotel Booking App — Test Report</h3>
+          <p>Functional, UI and API testing. Defect metrics, execution dashboard and end-to-end automation.</p>
+          <div style="display:flex;gap:8px">
+            <a class="btn" href="#" data-project="hotel">Details</a>
+            <a class="btn" href="/pdf/TestReport_HotelBooking.pdf" target="_blank">Download</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>Payroll Dashboard — Test Plan</h3>
+          <p>Configuration, payroll cycles, reports, data validation and reconciliation tests.</p>
+          <div style="display:flex;gap:8px">
+            <a class="btn" href="#" data-project="payroll">Details</a>
+            <a class="btn" href="/pdf/TestPlan_Payroll.pdf" target="_blank">Download</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>E‑commerce — API & Performance</h3>
+          <p>API contract testing, load tests and automation for checkout flows.</p>
+          <div style="display:flex;gap:8px">
+            <a class="btn" href="#" data-project="ecom">Details</a>
+            <a class="btn" href="/pdf/Perf_Report_Ecommerce.pdf" target="_blank">Download</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>Automation — Selenium Suite</h3>
+          <p>Reusable automation framework, CI pipeline and test coverage reports.</p>
+          <div style="display:flex;gap:8px">
+            <a class="btn" href="#" data-project="automation">Details</a>
+            <a class="btn" href="/projects/automation/index.html" target="_blank">View Code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS & METRICS -->
+    <section id="docs" class="section two-col">
+      <div class="card">
+        <h2>QA Documents</h2>
+        <p class="muted">Include these inside /pdf or link externally. Replace sample PDFs with your own.</p>
+
+        <h3 style="margin-top:18px">Suggested documents to include</h3>
+        <ul>
+          <li>Test Plan (Detailed)</li>
+          <li>Test Cases / Matrix (Excel)</li>
+          <li>Test Report (PDF) — with metrics & charts</li>
+          <li>Defect Summary (Excel/PDF)</li>
+          <li>Automation Reports (HTML)</li>
+        </ul>
+
+        <h3 style="margin-top:16px">Metrics template (example)</h3>
+        <ul>
+          <li>Total Test Cases</li>
+          <li>Executed</li>
+          <li>Pass / Fail / Blocked</li>
+          <li>Defects opened / closed</li>
+          <li>Automation coverage %</li>
+        </ul>
+
+      </div>
+
+      <aside class="card">
+        <h3>Quick tips</h3>
+        <ol>
+          <li>Use descriptive filenames: <code>TestReport_Payroll_2025-01.pdf</code></li>
+          <li>Show screenshots for UI bugs inside the report</li>
+          <li>Include a small executive summary at the top of each PDF</li>
+          <li>Keep automation code in a separate repo and link to it</li>
+        </ol>
+
+        <h4 style="margin-top:12px">Sample links</h4>
+        <p class="muted">You can host your reports inside the same repo: <code>/pdf/</code></p>
+      </aside>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="card">
+        <h2>Contact & Hire</h2>
+        <p class="muted">Open for freelance & full-time QA roles. I respond within 48 hours.</p>
+
+        <form id="contactForm" onsubmit="event.preventDefault();alert('Please replace this demo contact form with a mailto link or third-party form.');">
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <input placeholder="Your name" required style="flex:1;padding:10px;border-radius:10px;border:1px solid #e6eefc">
+            <input placeholder="Your email" required style="flex:1;padding:10px;border-radius:10px;border:1px solid #e6eefc">
+          </div>
+          <textarea placeholder="Message" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #e6eefc;min-height:100px"></textarea>
+          <div style="margin-top:10px">
+            <button class="btn primary" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> [Your Name] • QA Portfolio — Built with HTML
+    </footer>
+  </div>
+
+  <!-- Project detail modal (single template used for all projects) -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-card card">
+      <button id="closeModal" style="float:right;background:none;border:none;font-weight:800;font-size:18px">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Project detail data (replace with your content)
+    const PROJECTS = {
+      hotel: {
+        title: 'Hotel Booking App — Test Report',
+        summary: 'Scope: booking flow, cancellation, payments. Tools: Selenium, Postman. Highlights: 120 test cases, 12 critical defects found.',
+        details: '<h3>Highlights</h3><ul><li>Functional tests for booking & cancellations</li><li>API contract tests for payment gateway</li><li>Regression automation with TestNG & Jenkins</li></ul>'
+      },
+      payroll: {
+        title: 'Payroll Dashboard — Test Plan',
+        summary: 'Scope: payroll processing, tax calculation, payslip generation. Tools: Postman, SQL, JMeter.',
+        details: '<h3>Scope & Strategy</h3><p>Test schedule, data setup, edge-case payroll runs and reconciliation tests.</p>'
+      },
+      ecom: {
+        title: 'E-commerce — API & Performance',
+        summary: 'API contract testing, load tests for checkout & search. Tools: JMeter, Newman.',
+        details: '<h3>Performance</h3><p>Load test plan, SLAs and observed bottlenecks.</p>'
+      },
+      automation: {
+        title: 'Automation — Selenium Suite',
+        summary: 'Framework: Page Object Model, Data-driven tests, CI integration.',
+        details: '<h3>Framework</h3><p>Folder structure, sample test and pipeline config (Jenkinsfile).</p>'
+      }
+    };
+
+    document.querySelectorAll('[data-project]').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const key = e.currentTarget.getAttribute('data-project');
+        const data = PROJECTS[key] || {title:'Project', summary:'No data', details:''};
+        const html = `<h2>${data.title}</h2><p class='muted'>${data.summary}</p>${data.details}<p style='margin-top:14px'><a class='btn' href='/pdf/${key}.pdf' target='_blank'>Download PDF</a> <a class='btn' style='margin-left:8px' href='/projects/${key}/index.html' target='_blank'>View Code</a></p>`;
+        document.getElementById('modalContent').innerHTML = html;
+        document.getElementById('modal').classList.add('show');
+      })
+    })
+
+    document.getElementById('closeModal').addEventListener('click', ()=>{
+      document.getElementById('modal').classList.remove('show');
+    });
+
+    // Accessibility: close modal on ESC
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ document.getElementById('modal').classList.remove('show'); } });
+  </script>
+</body>
+</html>
